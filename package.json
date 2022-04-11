@@ -7,18 +7,17 @@
     "build": "vite build",
     "dev": "vite",
     "preview": "vite preview",
-
     "lint": "yarn lint:script && yarn lint:style",
     "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore .",
     "lint:style": "stylelint src/**/*.{css,scss,vue}"
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
+    "pinia": "^2.0.13",
     "roboto-fontface": "*",
     "vue": "3.2.25",
     "vue-router": "4.0.13",
     "vuetify": "3.0.0-beta.0",
-    "vuex": "4.0.2",
     "webfontloader": "1.6.28"
   },
   "devDependencies": {

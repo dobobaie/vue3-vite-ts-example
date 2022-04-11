@@ -1,41 +1,10 @@
 import { createApp } from "vue";
-import App from "./App.vue";
+
+import "./plugins/webfontloader";
+
 import vuetify from "./plugins/vuetify";
+import pinia from "./plugins/pinia";
+import router from "./router";
+import App from "./App.vue";
 
-// ---
-import { loadFonts } from "./plugins/webfontloader";
-loadFonts();
-
-// ---
-import { createRouter, createWebHistory } from "vue-router";
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    {
-      component: () => import("./App.vue"),
-      name: "home",
-      path: "/",
-    },
-  ],
-});
-
-// ---
-
-import { createStore } from "vuex";
-
-const store = createStore<{
-  count: number;
-}>({
-  state() {
-    return { count: 1 };
-  },
-  mutations: {
-    add(state, amount) {
-      state.count += amount;
-    },
-  },
-});
-
-// ---
-
-createApp(App).use(router).use(store).use(vuetify).mount("#app");
+createApp(App).use(router).use(pinia).use(vuetify).mount("#app");
